@@ -1,8 +1,27 @@
 " ========== Vim Basic Settings ============="
 
-" Pathogen settings.
+" First, Vundle:
+se nocompatible
 filetype off
-call pathogen#runtime_append_all_bundles()
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+Bundle 'gmarik/vundle'
+
+Bundle 'chriskempson/base16-vim.git'
+Bundle 'scrooloose/nerdtree.git'
+Bundle 'fholgado/minibufexpl.vim.git'
+Bundle 'scrooloose/nerdcommenter.git'
+Bundle 'msanders/snipmate.vim.git'
+Bundle 'scrooloose/syntastic.git'
+Bundle 'majutsushi/tagbar.git'
+Bundle 'tpope/vim-fugitive.git'
+Bundle 'Lokaltog/powerline.git'
+Bundle 'kchmck/vim-coffee-script'
+
+Bundle 'git://git.wincent.com/command-t.git'
+
 filetype plugin indent on
 
 " Make vim incompatbile to vi.
@@ -85,9 +104,6 @@ set listchars=tab:▸\ ,eol:¬
 nnoremap j gj
 nnoremap k gk
 
-" Rope settings."
-inoremap <leader>j <ESC>:RopeGotoDefinition<cr>
-
 " Get Rid of stupid Goddamned help keys
 inoremap <F1> <ESC>
 nnoremap <F1> <ESC>
@@ -158,7 +174,7 @@ nnoremap g; g;zz
 syntax on
 set t_Co=16
 set background=dark
-colorschem Tomorrow-Night-Eighties
+colorschem base16-eighties 
 
 syntax enable
 " Removing scrollbars
@@ -175,7 +191,7 @@ endif
 " Special Settings for Consoles
 if !has("gui_running")
     set t_Co=16
-    set background=light
+    set background=dark
 endif
 
 " Source the vimrc file after saving it
@@ -199,7 +215,6 @@ let g:miniBufExplModSelTarget = 1
 nmap <leader>l <ESC>:TagbarToggle<cr>
 imap <leader>l <ESC>:TagbarToggle<cr>i
 
-set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 " =========== END Plugin Settings =========="
 "
 au BufNewFile,BufReadPost *.coffee setl shiftwidth=2 tabstop=2 expandtab
