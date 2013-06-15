@@ -218,3 +218,4 @@ imap <leader>l <ESC>:TagbarToggle<cr>i
 " =========== END Plugin Settings =========="
 "
 au BufNewFile,BufReadPost *.coffee setl shiftwidth=2 tabstop=2 expandtab
+set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
