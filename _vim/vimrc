@@ -20,6 +20,7 @@ Bundle 'tpope/vim-fugitive.git'
 Bundle 'Lokaltog/powerline.git'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'guns/vim-clojure-static.git'
+Bundle 'Valloric/YouCompleteMe.git'
 
 Bundle 'git://git.wincent.com/command-t.git'
 
