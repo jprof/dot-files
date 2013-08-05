@@ -20,7 +20,7 @@ Bundle 'tpope/vim-fugitive.git'
 Bundle 'Lokaltog/powerline.git'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'guns/vim-clojure-static.git'
-Bundle 'Valloric/YouCompleteMe.git'
+"Bundle 'Valloric/YouCompleteMe.git'
 
 Bundle 'git://git.wincent.com/command-t.git'
 
@@ -220,4 +220,5 @@ imap <leader>l <ESC>:TagbarToggle<cr>i
 " =========== END Plugin Settings =========="
 "
 au BufNewFile,BufReadPost *.coffee setl shiftwidth=2 tabstop=2 expandtab
+au BufNewFile,BufReadPost *.md set ft=markdown
 set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
