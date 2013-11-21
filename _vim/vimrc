@@ -7,6 +7,9 @@ filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
+syntax on
+filetype plugin indent on
+
 Bundle 'gmarik/vundle'
 
 Bundle 'chriskempson/base16-vim.git'
@@ -20,9 +23,12 @@ Bundle 'tpope/vim-fugitive.git'
 Bundle 'Lokaltog/powerline.git'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'guns/vim-clojure-static.git'
-"Bundle 'Valloric/YouCompleteMe.git'
+Bundle 'tpope/vim-classpath.git'
+Bundle 'tpope/vim-fireplace.git'
+Bundle 'guns/vim-clojure-static.git'
+Bundle 'kien/ctrlp.vim.git'
 
-Bundle 'git://git.wincent.com/command-t.git'
+"Bundle 'Valloric/YouCompleteMe.git'
 
 filetype plugin indent on
 
@@ -63,6 +69,8 @@ set matchtime=3
 
 "Changing Leader Key
 let mapleader = ","
+
+let g:ctrlp_map = "<leader>t"
 
 " Set title to window
 set title
@@ -117,6 +125,11 @@ nnoremap ; :
 " Set vim to save the file on focus out.
 au FocusLost * :wa
 
+" Buffer navigation
+nnoremap <leader>b :buffers<cr>:buffer<space>
+nnoremap <leader>n :bn<cr>
+nnoremap <leader>p :bp<cr>
+
 " Adding More Shorcuts keys using leader kye.
 " Leader Kye provide separate namespace for specific commands.
 ",W Command to remove white space from a file.
@@ -127,6 +140,8 @@ nnoremap <leader>ft vatzf
 
 " ,q Re-hardwrap Paragraph
 nnoremap <leader>q gqip
+
+nnoremap <leader>e :Eval <CR>
 
 " ,v Select just pasted text.
 nnoremap <leader>v V`]
@@ -176,7 +191,7 @@ nnoremap g; g;zz
 syntax on
 set t_Co=16
 set background=dark
-colorschem base16-eighties 
+colorschem solarized
 
 syntax enable
 " Removing scrollbars
@@ -194,6 +209,7 @@ endif
 if !has("gui_running")
     set t_Co=16
     set background=dark
+    colorschem solarized
 endif
 
 " Source the vimrc file after saving it
@@ -219,6 +235,19 @@ imap <leader>l <ESC>:TagbarToggle<cr>i
 
 " =========== END Plugin Settings =========="
 "
-au BufNewFile,BufReadPost *.coffee setl shiftwidth=2 tabstop=2 expandtab
+au BufNewFile,BufReadPost *.coffee setl shiftwidth=2 tabstop=2 expandtab softtabstop=2 ft=coffee
 au BufNewFile,BufReadPost *.md set ft=markdown
 set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
+let g:ycm_autoclose_preview_window_after_insertion=1
+
+if has('conceal')
+    if has('autocmd')
+        autocmd Syntax * syn keyword Operator not conceal cchar=¬
+        autocmd Syntax * syn keyword Operator lambda conceal cchar=λ
+        autocmd Syntax ruby syn match rubyKeyword "->" conceal cchar=λ
+        autocmd Syntax haskell syn match hsKeyword "\\" conceal cchar=λ
+        autocmd Syntax clojure syn keyword clojureFunc fn conceal cchar=λ
+    endif
+    hi! link Conceal Operator
+    set conceallevel=2
+endif
