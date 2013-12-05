@@ -16,7 +16,10 @@ Bundle 'chriskempson/base16-vim.git'
 Bundle 'scrooloose/nerdtree.git'
 Bundle 'fholgado/minibufexpl.vim.git'
 Bundle 'scrooloose/nerdcommenter.git'
-Bundle 'msanders/snipmate.vim.git'
+Bundle 'MarcWeber/vim-addon-mw-utils'
+Bundle 'tomtom/tlib_vim'
+Bundle 'garbas/vim-snipmate'
+Bundle 'honza/vim-snippets'
 Bundle 'scrooloose/syntastic.git'
 Bundle 'majutsushi/tagbar.git'
 Bundle 'tpope/vim-fugitive.git'
@@ -242,7 +245,7 @@ let g:ycm_autoclose_preview_window_after_insertion=1
 
 if has('conceal')
     if has('autocmd')
-        autocmd Syntax * syn keyword Operator not conceal cchar=¬
+        autocmd Syntax clojure syn keyword Operator not conceal cchar=¬
         autocmd Syntax * syn keyword Operator lambda conceal cchar=λ
         autocmd Syntax ruby syn match rubyKeyword "->" conceal cchar=λ
         autocmd Syntax haskell syn match hsKeyword "\\" conceal cchar=λ
