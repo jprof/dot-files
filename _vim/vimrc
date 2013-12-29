@@ -29,6 +29,10 @@ Bundle 'guns/vim-clojure-static.git'
 Bundle 'tpope/vim-classpath.git'
 Bundle 'tpope/vim-fireplace.git'
 Bundle 'guns/vim-clojure-static.git'
+Bundle 'tpope/vim-sexp-mappings-for-regular-people'
+Bundle 'guns/vim-sexp'
+Bundle 'tpope/vim-repeat'
+Bundle 'tpope/vim-surround'
 Bundle 'kien/ctrlp.vim.git'
 
 "Bundle 'Valloric/YouCompleteMe.git'
@@ -72,6 +76,7 @@ set matchtime=3
 
 "Changing Leader Key
 let mapleader = ","
+let maplocalleader = ";"
 
 let g:ctrlp_map = "<leader>t"
 
