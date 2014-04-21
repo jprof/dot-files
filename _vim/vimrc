@@ -79,6 +79,7 @@ let mapleader = ","
 let maplocalleader = ";"
 
 let g:ctrlp_map = "<leader>t"
+let g:ctrlp_working_path_mode = "ra"
 
 " Set title to window
 set title
