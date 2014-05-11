@@ -34,6 +34,7 @@ Bundle 'guns/vim-sexp'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/timl'
+Bundle 'sjl/gundo.vim.git'
 Bundle 'kien/ctrlp.vim.git'
 
 "Bundle 'Valloric/YouCompleteMe.git'
@@ -151,7 +152,8 @@ nnoremap <leader>ft vatzf
 " ,q Re-hardwrap Paragraph
 nnoremap <leader>q gqip
 
-nnoremap <leader>e :Eval <CR>
+nnoremap <localleader>e :Eval <CR>
+nnoremap <leader>u :GundoToggle <CR>
 
 " ,v Select just pasted text.
 nnoremap <leader>v V`]
