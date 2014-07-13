@@ -255,6 +255,8 @@ au BufNewFile,BufReadPost *.coffee setl shiftwidth=2 tabstop=2 expandtab softtab
 au BufNewFile,BufReadPost *.md set ft=markdown
 au BufNewFile,BufReadPost *.cljs set ft=clojure
 
+au InsertLeave * if pumvisible() == 0|pclose|endif
+
 set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 let g:ycm_autoclose_preview_window_after_insertion=1
 
