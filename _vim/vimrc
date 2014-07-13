@@ -206,7 +206,7 @@ nnoremap g; g;zz
 syntax on
 set t_Co=16
 set background=dark
-colorschem solarized
+colorschem base16-default
 
 syntax enable
 " Removing scrollbars
@@ -222,9 +222,10 @@ endif
 
 " Special Settings for Consoles
 if !has("gui_running")
-    set t_Co=16
-    set background=dark
-    colorschem solarized
+    "set t_Co=16
+    "set background=dark
+    "colorschem solarized
+    colorscheme desert
 endif
 
 " Source the vimrc file after saving it
